@@ -133,6 +133,70 @@ func printPattern11(n int){
 	}
 }
 
+func printPattern13(n int){
+	p:=0;
+
+	for i:=1;i<=n;i++{
+		for j:=0;j<i;j++{
+			p= p+1
+			fmt.Print(p," ")
+		}
+		fmt.Println("")
+	}
+}
+
+func printPattern14(n int){
+	for i:=1;i<=n;i++{
+		for j:=0;j<i;j++{
+			fmt.Printf("%c",rune(65+j))
+		}
+		fmt.Println("")
+	}
+}
+
+func printPattern15(n int){
+	for i:=0;i<=n;i++{
+		for j:=0;j<(n-i);j++{
+			fmt.Printf("%c",rune(65+j))
+		}
+		fmt.Println("")
+	}
+}
+
+func printPattern16(n int){
+	for i:=0;i<n;i++{
+		for j:=0;j<=i;j++{
+			fmt.Printf("%c",rune(65+i))
+		}
+		fmt.Println("")
+	}
+}
+
+func printPattern17(n int){
+	for i:=1;i<=n;i++{
+
+		for j:=0;j<n-i;j++{
+			fmt.Print(" ")
+		}
+
+		a:= 64
+		breakP:= (2*i+1)/2
+		for j:=1;j<=(2*i)-1;j++{
+			if(j<=breakP){
+				a=a+1
+			}else{
+				a=a-1
+			}
+			fmt.Printf("%c",rune(a))
+		}
+
+		for j:=0;j<n-i;j++{
+			fmt.Print(" ")
+		}
+		fmt.Println("")
+	}
+}
+
 func main() {
 	// printPattern1(5)
 	// printPattern2(5)
@@ -143,5 +207,10 @@ func main() {
 	// printPattern8(5)
 	// printPattern9(5)
 	// printPattern10(5)
-	printPattern11(5)
+	// printPattern11(5)
+	// printPattern13(5)
+	// printPattern14(5)
+	// printPattern15(5)
+	// printPattern16(5)
+	printPattern17(5)
 }
