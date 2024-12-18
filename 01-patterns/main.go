@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func printPattern1(n int){
     for i := 0; i < n; i++ {
@@ -197,6 +199,96 @@ func printPattern17(n int){
 	}
 }
 
+func printPattern18(count int){
+	for i := 0; i < count; i++ {
+		counter := 64+count
+		for j := 0; j <= i; j++ {
+			fmt.Printf("%c",rune(counter))
+			counter = counter-1
+		}
+		fmt.Println("")
+	}
+}
+
+func printPattern19(count int){
+
+}
+
+func printPattern20(count int){
+
+	for i := 0; i <= count; i++ {
+		for j := 0; j < i; j++ {
+			fmt.Print("*")
+		}
+		for j := 0; j < (count-i)*2; j++ {
+			fmt.Print(" ")
+		}
+		for j := 0; j < i; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+
+	for i := 0; i < count; i++ {
+		for j := 0; j < count-i; j++ {
+			fmt.Print("*")
+		}
+		for j := 0; j < i*2; j++ {
+			fmt.Print(" ")
+		}
+		for j := 0; j < count-i; j++ {
+			fmt.Print("*")
+		}
+		fmt.Println()
+	}
+
+}
+
+func printPattern21(count int){
+	for i := 0; i < count; i++ {
+		for j := 0; j < count; j++ {
+			if i==0 || i==count-1{
+				fmt.Print("*")
+			}else{
+				if j==0 || j==count-1{
+					fmt.Print("*")
+				}else{
+					fmt.Print(" ")
+				}
+			}
+		}
+		fmt.Println("")
+	}
+}
+
+func printPattern22(count int){
+	iterator := (count*2)-1
+	for i := 0; i <= iterator; i++ {
+		for j := 0; j <= iterator; j++ {
+			xLeft := j
+			xRight := iterator - j
+			yLeft := i
+			yRight := iterator - i
+
+			minValue := xLeft
+
+			if(minValue>xRight){
+				minValue = xRight
+			}
+			if(minValue>yLeft){
+				minValue = yLeft
+			}
+			if(minValue>yRight){
+				minValue = yRight
+			}
+
+			fmt.Print(count-minValue)
+		}
+		fmt.Println("")
+	}
+}
+
+
 func main() {
 	// printPattern1(5)
 	// printPattern2(5)
@@ -212,5 +304,10 @@ func main() {
 	// printPattern14(5)
 	// printPattern15(5)
 	// printPattern16(5)
-	printPattern17(5)
+	// printPattern17(5)
+	// printPattern18(5)
+	// printPattern19(5)
+	// printPattern20(5)
+	// printPattern21(5)
+	printPattern22(4)
 }
